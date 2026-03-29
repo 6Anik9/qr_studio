@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Anik Studio | Forge</title>
+    
+    <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <div id="welcome-screen">
+        <h1 class="premium-title">QR STUDIO</h1>
+        <p class="welcome-sub">POWERED BY ANIK SHEIKH</p>
+        <button class="btn-premium" style="width: auto; padding: 15px 50px; margin-top: 30px;" onclick="enter()">LAUNCH</button>
+    </div>
+
+    <div id="main-app">
+        <div class="preview-pane">
+            <div class="canvas-card" id="frame">
+                <div id="qr-target"></div>
+                <svg id="bar-target" style="display:none;"></svg>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="glass-tab-bar">
+                <button id="t-qr" class="glass-btn active" onclick="tab('qr')">QR FORGE</button>
+                <button id="t-bar" class="glass-btn" onclick="tab('bar')">BARCODE</button>
+            </div>
+
+            <div id="p-qr">
+                <div class="field-group"><label class="label">Content Link</label><input type="text" id="q-val" class="glass-input" value="https://6anik9.github.io/portfolio"></div>
+                <div class="field-group">
+                    <label class="label">Brand Logo</label>
+                    <label for="q-logo" class="glass-input" style="display:flex; align-items:center; gap:10px;">
+                        <i class="fas fa-upload"></i> <span id="f-name">Add Icon</span>
+                    </label>
+                    <input type="file" id="q-logo" style="display:none;" accept="image/*">
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <div style="flex:1"><label class="label">Style</label><select id="q-dot" class="glass-input"><option value="extra-rounded">Liquid</option><option value="square">Sharp</option></select></div>
+                    <div style="flex:1"><label class="label">Color</label><input type="color" id="q-clr" class="glass-input" value="#8b5cf6" style="height:46px; padding:2px;"></div>
+                </div>
+            </div>
+
+            <div id="p-bar" style="display:none;">
+                <div class="field-group"><label class="label">Code Data</label><input type="text" id="b-val" class="glass-input" value="ANIK-STUDIO"></div>
+                <div class="field-group"><label class="label">Format</label><select id="b-fmt" class="glass-input"><option value="CODE128">CODE128</option><option value="EAN13">EAN-13</option></select></div>
+            </div>
+        </div>
+
+        <div class="action-area">
+            <button class="btn-premium" onclick="save()">DOWNLOAD PNG</button>
+            <div class="credit-footer">
+                <span class="dev-text">DEVELOPED BY</span>
+                <div class="social-links">
+                    <a href="https://facebook.com/6mdaniksheikh9" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/6mdaniksheikh9" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/6anik9" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+                      </html>
